@@ -3,6 +3,16 @@
         "elements": [{
             "elements": [
                 {
+                    "className": "org.joget.apps.form.lib.CustomHTML",
+                    "properties": {
+                        "requiredSanitize": "",
+                        "autoPopulate": "",
+                        "label": "",
+                        "id": "field3",
+                        "value": "<script>\r\n    $(document).ready(function() {\r\n        $(\"#name\").css(\"background-color\", \"lightblue\"); // Change la couleur du champ \"name\"\r\n    });\r\n<\/script>\r\n"
+                    }
+                },
+                {
                     "className": "org.joget.apps.form.lib.TextField",
                     "properties": {
                         "requiredSanitize": "",

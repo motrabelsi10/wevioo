@@ -2,7 +2,48 @@
    <id>wevioo</id>
    <version></version>
    <name>wevioo</name>
-   <packageDefinitionList/>
+   <packageDefinitionList>
+      <packageDefinition>
+         <appId>wevioo</appId>
+         <id>wevioo</id>
+         <name>wevioo</name>
+         <packageActivityFormMap>
+            <entry>
+               <string>process1::runProcess</string>
+               <packageActivityForm>
+                  <processDefId>process1</processDefId>
+                  <activityDefId>runProcess</activityDefId>
+                  <formId></formId>
+                  <type>SINGLE</type>
+                  <autoContinue>false</autoContinue>
+                  <disableSaveAsDraft>false</disableSaveAsDraft>
+               </packageActivityForm>
+            </entry>
+         </packageActivityFormMap>
+         <packageActivityPluginMap>
+            <entry>
+               <string>process1::tool1</string>
+               <packageActivityPlugin>
+                  <processDefId>process1</processDefId>
+                  <activityDefId>tool1</activityDefId>
+                  <pluginName>org.joget.apps.app.lib.MultiTools</pluginName>
+                  <pluginProperties>{&quot;runInMultiThread&quot;:&quot;&quot;,&quot;comment&quot;:&quot;&quot;,&quot;tools&quot;:[{&quot;className&quot;:&quot;org.joget.apps.app.lib.BeanShellTool&quot;,&quot;properties&quot;:{&quot;script&quot;:&quot;import org.joget.apps.app.service.AppService;\r\nimport org.joget.apps.app.model.AppDefinition;\r\nimport org.joget.apps.form.model.FormRowSet;\r\nimport org.joget.apps.form.service.FormService;\r\nimport org.joget.plugin.base.DefaultApplicationPlugin;\r\nimport org.joget.workflow.model.WorkflowAssignment;\r\nimport org.joget.apps.form.model.FormRow;\r\n\r\npublic class NameProcessor extends DefaultApplicationPlugin {\r\n    public Object execute(WorkflowAssignment assignment, AppDefinition appDef) {\r\n        FormService formService = (FormService) AppUtil.getApplicationContext().getBean(\&quot;formService\&quot;);\r\n        String formTable = \&quot;app_fd_personne\&quot;; // Table associée au formulaire\r\n        \r\n        FormRow row = new FormRow();\r\n        row.setProperty(\&quot;name\&quot;, \&quot;Test Name\&quot;);\r\n        FormRowSet rowSet = new FormRowSet();\r\n        rowSet.add(row);\r\n\r\n        formService.storeFormData(formTable, rowSet);\r\n        return null;\r\n    }\r\n}\r\n&quot;}}]}</pluginProperties>
+               </packageActivityPlugin>
+            </entry>
+         </packageActivityPluginMap>
+         <packageParticipantMap>
+            <entry>
+               <string>process1::processStartWhiteList</string>
+               <packageParticipant>
+                  <processDefId>process1</processDefId>
+                  <participantId>processStartWhiteList</participantId>
+                  <type>role</type>
+                  <value>adminUser</value>
+               </packageParticipant>
+            </entry>
+         </packageParticipantMap>
+      </packageDefinition>
+   </packageDefinitionList>
    <formDefinitionList/>
    <userviewDefinitionList/>
    <datalistDefinitionList/>

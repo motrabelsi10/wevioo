@@ -1,16 +1,5 @@
 {
-    "elements": [
-        {
-            "className": "org.joget.plugin.enterprise.HtmlCodeComponent",
-            "properties": {
-                "attr-data-events-listening": [],
-                "textContent": "<js>\r\n    \r\n    document.addEventListener(\"DOMContentLoaded\", function () {\r\n    let nameField = document.getElementById(\"name\");\r\n    if (nameField) {\r\n        nameField.value = \"Nom par défaut\";\r\n        nameField.style.backgroundColor = \"#f0f0f0\";\r\n    }\r\n});\r\n\r\n<\/js>\r\n",
-                "id": "E28739D2492D465AF6EC7D51E486E6B4",
-                "customId": "id"
-            }
-        },
-        {"className": "menu-component"}
-    ],
+    "elements": [{"className": "menu-component"}],
     "className": "org.joget.apps.userview.model.UserviewPage",
     "properties": {"id": "up-566E1144B2104779E68A20D4296ADE4B"}
 }
